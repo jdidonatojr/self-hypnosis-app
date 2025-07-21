@@ -7,19 +7,42 @@ function StartSession() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Goal: ${goal}\nDuration: ${duration}\nTone: ${tone}\n\nNext: Call OpenAI and ElevenLabs.`);
-    // TODO: Replace alert with API call + script + audio
+    alert(`🎯 Goal: ${goal}\n⏱ Duration: ${duration} minutes\n🎭 Tone: ${tone}\n\n✅ Next: Call OpenAI and ElevenLabs`);
+    // TODO: Replace alert with API call to generate script + audio
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', fontFamily: 'Arial', padding: '2rem' }}>
+    <div
+      style={{
+        maxWidth: '600px',
+        margin: '0 auto',
+        fontFamily: 'Arial',
+        padding: '2rem',
+        backgroundColor: '#f9f9f9',
+        borderRadius: '12px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+      }}
+    >
       <h2>🌀 Build Your Custom Session</h2>
       <form onSubmit={handleSubmit}>
 
         {/* Goal */}
         <div style={{ marginBottom: '1.5rem' }}>
           <label><strong>What’s your goal?</strong></label><br />
-          <select value={goal} onChange={(e) => setGoal(e.target.value)} required>
+          <select
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '12px',
+              fontSize: '16px',
+              borderRadius: '6px',
+              border: '1px solid #ccc',
+              marginTop: '8px',
+              boxSizing: 'border-box'
+            }}
+          >
             <option value="">-- Select --</option>
             <option value="Sleep">Sleep 😴</option>
             <option value="Reduce Stress">Reduce Stress 😌</option>
@@ -31,7 +54,20 @@ function StartSession() {
         {/* Duration */}
         <div style={{ marginBottom: '1.5rem' }}>
           <label><strong>How long should it be?</strong></label><br />
-          <select value={duration} onChange={(e) => setDuration(e.target.value)} required>
+          <select
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '12px',
+              fontSize: '16px',
+              borderRadius: '6px',
+              border: '1px solid #ccc',
+              marginTop: '8px',
+              boxSizing: 'border-box'
+            }}
+          >
             <option value="">-- Select --</option>
             <option value="3">3 minutes</option>
             <option value="5">5 minutes</option>
@@ -42,7 +78,20 @@ function StartSession() {
         {/* Tone */}
         <div style={{ marginBottom: '1.5rem' }}>
           <label><strong>What emotional tone do you prefer?</strong></label><br />
-          <select value={tone} onChange={(e) => setTone(e.target.value)} required>
+          <select
+            value={tone}
+            onChange={(e) => setTone(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '12px',
+              fontSize: '16px',
+              borderRadius: '6px',
+              border: '1px solid #ccc',
+              marginTop: '8px',
+              boxSizing: 'border-box'
+            }}
+          >
             <option value="">-- Select --</option>
             <option value="Peaceful & Neutral">Peaceful & Neutral 🌿</option>
             <option value="Warm & Nurturing">Warm & Nurturing 💗</option>
